@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Entry Form</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="card">
+    <p class="eyebrow">Data Entry Portal</p>
+    <h1>Apni jaankari bharein</h1>
+
+    <% if (typeof error !== "undefined" && error) { %>
+      <div class="flash error"><%= error %></div>
+    <% } %>
+    <% if (success) { %>
+      <div class="flash success"><%= success %></div>
+    <% } %>
+
+    <form method="POST" action="/form">
+      <label for="name">Naam</label>
+      <input type="text" id="name" name="name" required autofocus />
+
+      <label for="address">Pata (Address)</label>
+      <textarea id="address" name="address" required></textarea>
+
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10,13}" placeholder="10 anko ka number" required />
+
+      <button type="submit">Submit karein</button>
+    </form>
+    <span class="footer-link"><a href="/logout">Logout</a></span>
+  </div>
+</body>
+</html>

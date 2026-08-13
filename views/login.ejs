@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="card">
+    <p class="eyebrow">Data Entry Portal</p>
+    <h1>Login karein</h1>
+
+    <% if (error) { %>
+      <div class="flash error"><%= error %></div>
+    <% } %>
+
+    <form method="POST" action="/login">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required autofocus />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+    <span class="footer-link"><a href="/admin">Admin view &rarr;</a></span>
+  </div>
+</body>
+</html>
